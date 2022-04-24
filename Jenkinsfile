@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
               sh '''#!/bin/bash
-              bolt script run '/root/21049462/script_dir/21049462_script' -t websrv_21049462  -u clientadm -p user123 --no-host-key-check
+              bolt script run '/21049462/script_dir/21049462_script' -t websrv_21049462  -u clientadm -p user123 --no-host-key-check
               '''
               sh 'echo "Stage 3 Completed - 21049462'
             }
