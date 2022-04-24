@@ -1,1 +1,40 @@
+#!groovy
+pipeline {
+	agent any
 
+	tools { 
+		maven 'maven'
+	}
+
+	stages {
+		stage('21049462 Stage 1') {
+			steps {
+				sh 'echo "21049462 - Start of Pipeline"'
+			}
+		}
+
+		stage('21049462 Stage 2') {
+			steps{
+				input("Push changes to Production?")
+			}
+		}
+
+		stage('21049462 Stage 3') {
+			steps{
+				sh 'bolt script run "/…/<your student ID_script>"'
+				sh 'echo "Stage 3 Completed - 21049462'
+			}
+		}
+		stage('21049462 Stage 4') {
+			steps {
+				sh 'echo "Production website tested working"'
+			}
+		}
+		stage('21049462 Stage 5') {
+			steps {
+				sh 'echo "Production website is updated successfully"'
+			}
+		}
+
+	}   
+}
